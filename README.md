@@ -10,6 +10,10 @@ Docker Image Name
 
 Docker Image Tag
 
+### `docker_context``
+
+Docker Context of build process
+
 ### `gar_hostname`
 
 Google Artifact Repository Hostname
@@ -35,6 +39,7 @@ Define if image must be tagged as latest version
     with:
       image_name: myimage
       image_tag: v1.0.0
+      docker_context: ./
       gar_hostname: europe-west4-docker.pkg.dev
       gar_project: ${{ secrets.GCLOUD_PROJECT_ID }}
       gar_service_account: ${{ secrets.GCLOUD_SERVICE_KEY }}

@@ -4,7 +4,7 @@ IMAGE="$INPUT_GAR_HOSTNAME/$INPUT_GAR_PROJECT/$INPUT_IMAGE_NAME:$INPUT_IMAGE_TAG
 
 echo $INPUT_GAR_SERVICE_ACCOUNT | docker login -u _json_key --password-stdin https://$INPUT_GAR_HOSTNAME
 
-docker build -t $IMAGE .
+docker build -t $IMAGE $INPUT_DOCKER_CONTEXT
 
 docker push $IMAGE
 
