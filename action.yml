@@ -1,0 +1,28 @@
+name: "Push Docker Image to GAR"
+description: "Push docker image to Google Artifact Repository"
+branding:
+  color: "green"
+  icon: "box"
+inputs:
+  image_name:
+    description: "Docker Image Name"
+    required: true
+  image_tag:
+    description: "Docker Image Tag"
+    required: true
+  gar_hostname:
+    description: "Google Artifact Repository Host"
+    required: true
+  gar_project:
+    description: "Google Artifact Repository Project ID"
+    required: true
+  gar_service_account:
+    description: "Google Artifact Repository Service Key"
+    required: true
+  tag_latest_version:
+    description: "Define if image must be tagged as latest version (Default: false) accepted value: true|false"
+    required: false
+    default: "false"
+runs:
+  using: "docker"
+  image: "Dockerfile"
